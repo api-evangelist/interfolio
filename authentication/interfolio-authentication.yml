@@ -1,0 +1,47 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.faculty180.com/api_docs
+docs:
+- https://www.faculty180.com/api_docs
+- https://faculty180.interfolio.com/swagger/ui/
+- https://sas-irad.github.io/interfolio-api/
+summary:
+  types: [hmac]
+  api_key_in: [header]
+  oauth2_flows: []
+  notes: >-
+    Interfolio does not use OAuth2 or API-key bearer tokens. Both the Faculty180
+    (Faculty Activity Reporting) API and the Core/Search/RPT API authenticate each
+    request with an HMAC-SHA signature computed over the request using an
+    Interfolio-issued public/private key pair, scoped to a tenant (numeric tenantId)
+    or a per-institution database ID. Authorization is enforced server-side by the
+    Interfolio permissioning infrastructure for the identified tenant.
+schemes:
+- name: HMAC (Faculty180)
+  type: hmac
+  in: header
+  description: >-
+    Faculty180 Faculty Activity Reporting API request signing. The Authorization
+    header carries the public key and the request signature; a Timestamp header and
+    an INTF-DatabaseID header identify the institution database. Key pairs are issued
+    by Interfolio per institution.
+  headers:
+    authorization: 'INTF {publicKey}:{signature}'
+    timestamp: 'Timestamp'
+    database_id: 'INTF-DatabaseID'
+  algorithm: HMAC-SHA1
+  credentials: [publicKey, privateKey, databaseId]
+  sources: [https://www.faculty180.com/api_docs]
+- name: HMAC (Core / Search / RPT)
+  type: hmac
+  in: header
+  description: >-
+    Interfolio Core, Faculty Search, and Review-Promotion-Tenure REST + GraphQL API
+    request signing. The client is instantiated with restUrl (logic.interfolio.com),
+    graphQlUrl (caasbox.interfolio.com), tenantId, publicKey, and privateKey; each
+    request is HMAC-signed. Intended for backend/middleware integrations, not public
+    front-end use (private key required).
+  credentials: [publicKey, privateKey, tenantId]
+  rest_url: https://logic.interfolio.com
+  graphql_url: https://caasbox.interfolio.com
+  sources: [https://sas-irad.github.io/interfolio-api/]
