@@ -1,0 +1,31 @@
+# Interfolio
+
+> Interfolio is a Faculty Information System (an Elsevier product) for managing the full academic faculty lifecycle — recruiting and hiring (Faculty Search), activity reporting (Faculty180 / Faculty Activity Reporting), review, promotion and tenure (RPT), lifecycle management, faculty web profiles, and the Dossier application service. It exposes REST and GraphQL APIs secured with an HMAC public/private key mechanism scoped by tenant.
+
+## APIs
+
+- [Faculty180 Faculty Activity Reporting API](https://www.faculty180.com/api_docs): RESTful API for faculty listings, courses taught, SCP activity attachments, faculty vita, and public faculty activity search. Base host https://faculty180.interfolio.com. HMAC-signed (INTF public:signature, Timestamp, INTF-DatabaseID).
+- [Interfolio Core, Search & RPT API](https://interfolio.com/data/): REST (https://logic.interfolio.com) + GraphQL (https://caasbox.interfolio.com) for core Units, Faculty Search, and Review-Promotion-Tenure data. HMAC public/private key scoped by tenantId.
+
+## Docs
+
+- [Faculty180 API Documentation](https://www.faculty180.com/api_docs)
+- [Faculty180 Swagger UI](https://faculty180.interfolio.com/swagger/ui/)
+- [Data & Integration overview](https://interfolio.com/data/)
+- [Community API client (SAS IRAD)](https://sas-irad.github.io/interfolio-api/)
+- [Product Help Center](https://product-help.interfolio.com/)
+
+## Artifacts
+
+- [Authentication profile](https://raw.githubusercontent.com/api-evangelist/interfolio/refs/heads/main/authentication/interfolio-authentication.yml)
+- [API conventions](https://raw.githubusercontent.com/api-evangelist/interfolio/refs/heads/main/conventions/interfolio-conventions.yml)
+- [Conformance](https://raw.githubusercontent.com/api-evangelist/interfolio/refs/heads/main/conformance/interfolio-conformance.yml)
+- [Lifecycle](https://raw.githubusercontent.com/api-evangelist/interfolio/refs/heads/main/lifecycle/interfolio-lifecycle.yml)
+- [Packages](https://raw.githubusercontent.com/api-evangelist/interfolio/refs/heads/main/packages/interfolio-packages.yml)
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/interfolio/refs/heads/main/security/interfolio-domain-security.yml)
+
+## Operational
+
+- [Status page](https://status.interfolio.com/)
+- [Blog](https://www.interfolio.com/resources/)
+- [Sign in](https://account.interfolio.com/login)

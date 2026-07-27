@@ -1,0 +1,18 @@
+generated: '2026-07-19'
+method: searched
+source: https://status.interfolio.com/
+versioning:
+  scheme: uri-path
+  current: v1
+  detail: Faculty180 REST paths carry a version segment (v1); documented via Swagger UI.
+  docs: https://faculty180.interfolio.com/swagger/ui/
+deprecation:
+  policy_url: null
+  sunset_header: false
+  detail: No public deprecation or Sunset/Deprecation (RFC 8594) header policy was found.
+sla:
+  url: null
+  uptime_target: null
+status_page: https://status.interfolio.com/
+status_page_vendor: Helpjuice
+deprecated_operations: []

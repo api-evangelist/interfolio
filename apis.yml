@@ -1,8 +1,26 @@
 aid: interfolio
 name: Interfolio
-description: 'Interfolio is a company surfaced as a portfolio company of insight-partners and added to
-  the API Evangelist network as a stub for enrichment. Sector: education. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: 'Interfolio is a Faculty Information System (now an Elsevier product) that helps
+  colleges and universities manage the full faculty lifecycle: recruiting and hiring (Faculty
+  Search), activity reporting and reviews (Faculty180 / Faculty Activity Reporting), review,
+  promotion and tenure (RPT), lifecycle management, faculty web profiles, and the Dossier
+  application service for individual academics. Interfolio exposes REST and GraphQL APIs for
+  integrating faculty, activity, position, and review data with campus systems, secured with
+  an HMAC public/private key mechanism scoped by tenant. Surfaced as a portfolio company of
+  Insight Partners and enriched with real developer-surface artifacts.'
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://assets.interfolio.com/public/images/favicons/apple-touch-icon.png
 url: https://raw.githubusercontent.com/api-evangelist/interfolio/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,11 +30,43 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Education
-apis: []
+- Higher Education
+- Faculty Information System
+- Faculty Activity Reporting
+- Review Promotion Tenure
+- Academic
+- Research
+apis:
+- name: Faculty180 Faculty Activity Reporting API
+  description: 'RESTful API for the Faculty180 (Faculty Activity Reporting) system, exposing
+    faculty listings, courses taught, scholarly contribution and professional (SCP) activity
+    attachments, faculty vita, and public faculty activity search. Authenticated with an HMAC
+    signature (INTF public:signature Authorization header, Timestamp, and INTF-DatabaseID
+    header) against a per-institution database ID.'
+  humanURL: https://www.faculty180.com/api_docs
+  baseURL: https://faculty180.interfolio.com
+  properties:
+  - type: Documentation
+    url: https://www.faculty180.com/api_docs
+  - type: APIReference
+    url: https://faculty180.interfolio.com/swagger/ui/
+- name: Interfolio Core, Search & RPT API
+  description: 'REST and GraphQL APIs for the Interfolio Faculty Information System covering
+    core Units, Faculty Search (Positions, Position Types/Status, Applications, Application
+    Documents, Reports), and Review, Promotion & Tenure (Units, Committees, Forms, Packets,
+    Workflow Steps, Evaluator Sections, Reports, Users). Backend/middleware integration API
+    authenticated with an HMAC public/private key pair scoped by numeric tenantId.'
+  humanURL: https://interfolio.com/data/
+  baseURL: https://logic.interfolio.com
+  properties:
+  - type: GraphQL
+    url: https://caasbox.interfolio.com
+  - type: Documentation
+    url: https://interfolio.com/data/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +75,42 @@ maintainers:
 common:
 - type: Website
   url: https://www.interfolio.com/
+- type: DeveloperPortal
+  url: https://www.faculty180.com/api_docs
+- type: Documentation
+  url: https://www.faculty180.com/api_docs
+- type: APIReference
+  url: https://faculty180.interfolio.com/swagger/ui/
+- type: Support
+  url: https://product-help.interfolio.com/
+- type: StatusPage
+  url: https://status.interfolio.com/
+- type: Blog
+  url: https://www.interfolio.com/resources/
+- type: SignUp
+  url: https://account.interfolio.com/login
+- type: Login
+  url: https://account.interfolio.com/login
+- type: PrivacyPolicy
+  url: https://www.elsevier.com/legal/privacy-policy
+- type: TermsOfService
+  url: https://www.elsevier.com/legal/elsevier-website-terms-and-conditions
+- type: Authentication
+  url: authentication/interfolio-authentication.yml
+- type: Conventions
+  url: conventions/interfolio-conventions.yml
+- type: Packages
+  url: packages/interfolio-packages.yml
+- type: Conformance
+  url: conformance/interfolio-conformance.yml
+- type: Lifecycle
+  url: lifecycle/interfolio-lifecycle.yml
+- type: DomainSecurity
+  url: security/interfolio-domain-security.yml
+- type: LLMsTxt
+  url: llms/interfolio-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

@@ -1,0 +1,50 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.faculty180.com/api_docs
+docs:
+- https://www.faculty180.com/api_docs
+- https://sas-irad.github.io/interfolio-api/
+summary: >-
+  Cross-cutting request/response semantics for the Interfolio APIs, captured from the
+  Faculty180 API documentation and the community-documented Core/Search/RPT client.
+  Interfolio is a signed-request (HMAC) integration API; it does not document an
+  idempotency-key contract, OAuth scopes, or a public error-envelope standard.
+authentication:
+  style: hmac
+  detail: authentication/interfolio-authentication.yml
+versioning:
+  scheme: uri-path
+  detail: >-
+    Faculty180 exposes a versioned REST surface under a version segment (e.g. /v1)
+    in its Swagger-documented paths. The Core/Search/RPT API is addressed by resource
+    path under logic.interfolio.com with GraphQL at caasbox.interfolio.com.
+  reference: lifecycle/interfolio-lifecycle.yml
+idempotency:
+  supported: false
+  detail: >-
+    No idempotency-key header or documented idempotent-write contract was found in the
+    published Faculty180 documentation.
+pagination:
+  supported: unknown
+  detail: >-
+    List endpoints (faculty listing, course listing, activity search) are documented,
+    but no explicit cursor/offset pagination parameter contract was published on the
+    public docs surface.
+data_formats:
+  request: [application/json, application/x-www-form-urlencoded]
+  response: [application/json]
+tenancy:
+  model: multi-tenant
+  detail: >-
+    Requests are scoped to a tenant via numeric tenantId (Core/Search/RPT) or a
+    per-institution database ID (INTF-DatabaseID header, Faculty180). Authorization is
+    enforced by Interfolio's permissioning infrastructure for the identified tenant.
+error_envelope:
+  standard: none-documented
+  detail: >-
+    No RFC 9457 problem+json or documented structured error envelope was found on the
+    public docs surface; errors surface as HTTP status codes.
+  reference: conformance/interfolio-conformance.yml
+rate_limiting:
+  signaled: unknown
+  detail: No public rate-limit headers or quota documentation were found.

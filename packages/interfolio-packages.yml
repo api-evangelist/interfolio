@@ -1,0 +1,25 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.npmjs.com/package/@sas-irad/interfolio-api
+notes: >-
+  No first-party Interfolio-published client libraries were found on npm, PyPI, Maven
+  Central, NuGet, pkg.go.dev, RubyGems, Packagist, or crates.io. The packages below are
+  community/third-party clients for the Interfolio HMAC APIs (author: UPenn SAS IRAD and
+  others) and are recorded as official:false. Because no official SDK exists, no `SDKs`
+  rating pointer is emitted.
+packages:
+- language: javascript
+  registry: npm
+  name: '@sas-irad/interfolio-api'
+  url: https://www.npmjs.com/package/@sas-irad/interfolio-api
+  install: npm install @sas-irad/interfolio-api
+  official: false
+  publisher: University of Pennsylvania SAS IRAD (community)
+  docs: https://sas-irad.github.io/interfolio-api/
+- language: python
+  registry: pypi
+  name: interfolio-api
+  url: https://pypi.org/project/interfolio-api/
+  install: pip install interfolio-api
+  official: false
+  publisher: community

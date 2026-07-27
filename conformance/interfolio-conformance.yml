@@ -1,0 +1,33 @@
+generated: '2026-07-19'
+method: derived
+source: https://www.faculty180.com/api_docs
+notes: >-
+  Derived from the published Interfolio developer surface (Faculty180 API docs, Swagger
+  UI, and the community-documented Core/Search/RPT client). Interfolio uses a proprietary
+  HMAC signing scheme rather than OAuth2/OIDC, and no cross-cutting standards conformance
+  is claimed in the public docs.
+standards:
+- id: rest
+  conforms: true
+  evidence: Resource-oriented HTTP+JSON API documented via Swagger UI (Faculty180).
+- id: graphql
+  conforms: true
+  evidence: Core/Search/RPT surface exposes a GraphQL endpoint at caasbox.interfolio.com.
+- id: openapi-swagger
+  conforms: true
+  evidence: Faculty180 publishes a Swagger UI at faculty180.interfolio.com/swagger/ui/ (spec JSON not public).
+- id: hmac-request-signing
+  conforms: true
+  evidence: Requests signed with HMAC using Interfolio-issued public/private key pairs.
+- id: oauth2
+  conforms: false
+  evidence: No OAuth2 flows documented; authentication is HMAC signing.
+- id: oidc
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No application/problem+json error envelope documented.
+- id: scim2
+  conforms: false
+- id: fhir
+  conforms: false
