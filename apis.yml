@@ -8,6 +8,17 @@ description: 'Interfolio is a Faculty Information System (now an Elsevier produc
   integrating faculty, activity, position, and review data with campus systems, secured with
   an HMAC public/private key mechanism scoped by tenant. Surfaced as a portfolio company of
   Insight Partners and enriched with real developer-surface artifacts.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
